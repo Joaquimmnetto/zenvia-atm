@@ -1,5 +1,4 @@
-
-
+import math
 
 class BankNoteManager():
 
@@ -23,7 +22,7 @@ class BankNoteManager():
         current_value = value
         sorted_notes = sorted(available_notes, reverse=True)
         for note in sorted_notes:
-            notes_needed = current_value/note
+            notes_needed = math.floor(current_value/note)
             current_value = current_value % note
             result[note] = notes_needed
 
